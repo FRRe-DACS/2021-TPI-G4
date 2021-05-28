@@ -1,7 +1,7 @@
 import Products from "../models/products.models";
 
 export default class productsService {
-  //Crear un producto
+  //Crear productos
   async createproducts(data_products: any, reporte: any) {
     data_products.forEach(async function (producto: any) {
       const newProduct = new Products(producto);
@@ -9,7 +9,11 @@ export default class productsService {
       newProduct.report = reporte._id;
       await newProduct.save();
     });
-
+ 
     return reporte;
+  }
+   //Borro lista de productos
+   async deleteProduct(data_products : any){
+    return await Products.deleteMany({ _id: { $in: data_products } })
   }
 }

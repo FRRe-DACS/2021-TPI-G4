@@ -17,7 +17,7 @@ interface IPayload {
 //Valido si viene con token
 export const validateToken: RequestHandler = (req, res, next) => {
   const token = req.header("token");
-  if (!token) return res.status(500).json("Por favor envie su autenticacion!");
+  if (!token) return res.status(500).json("Por favor envie su autorizacion!");
   const payload = jwt.verify(
     token,
     `${Validate.default.TOKEN_SECRET}`

@@ -1,4 +1,5 @@
 import Reports from "../models/reports.models";
+import Product from '../models/products.models'
 import Business from "../models/business.models";
 import UserBusiness from "../models/users.business.models";
 import productClass from "./products.repository";
@@ -30,7 +31,7 @@ export default class reportsService {
             {
               path: "listaRegistro",
               model: "Products",
-              select: { _id: 0, __v: 0 },
+              select: { _id: 0, __v: 0, report: 0 },
             },
             {
               path: "infoEmpresa",
@@ -86,7 +87,10 @@ export default class reportsService {
 
   //Borro un reporte
   async deletereports(id_report: any) {
-    await Reports.findById(id_report).deleteOne();
+    const report = await Reports.findById(id_report);
+    await instanceProduct.deleteProduct(report?.listaRegistro);
+    await Reports.findByIdAndDelete(id_report);
+    //const deletedProductsReports = await Product.deleteMany({ _id: { $in: report?.listaRegistro } })
     return "Reporte eliminado correctamente";
   }
 
