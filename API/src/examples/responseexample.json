@@ -1,0 +1,173 @@
+[
+  {
+  "infoEmpresa": {
+    "cuit": 20633929851,
+    "razon_social": "Baumbach, Hamill and Prohaska"
+  },
+  "listaRegistro": [
+    {
+      "denominacion": "Wine - Stoneliegh Sauvignon",
+      "codigo_ean": 1994526674616,
+      "precio_unidad": 944,
+      "unidad_medida": "",
+      "cantidad_prod": 9647,
+      "cantidad_vend": 664
+    },
+    {
+      "denominacion": "Cactus Pads",
+      "codigo_ean": 1814724402449,
+      "precio_unidad": 770,
+      "unidad_medida": "m",
+      "cantidad_prod": 9290,
+      "cantidad_vend": 595
+    },
+    {
+      "denominacion": "Bread - Rosemary Focaccia",
+      "codigo_ean": 1439129689194,
+      "precio_unidad": 564,
+      "unidad_medida": "",
+      "cantidad_prod": 7816,
+      "cantidad_vend": 563
+    },
+    {
+      "denominacion": "Teriyaki Sauce",
+      "codigo_ean": 1684113597135,
+      "precio_unidad": 813,
+      "unidad_medida": "m",
+      "cantidad_prod": 6923,
+      "cantidad_vend": 838
+    },
+    {
+      "denominacion": "Beer - True North Strong Ale",
+      "codigo_ean": 1487526632152,
+      "precio_unidad": 215,
+      "unidad_medida": "m",
+      "cantidad_prod": 5244,
+      "cantidad_vend": 188
+    }
+  ],
+  "periodo": {
+    "year": "19",
+    "month": "10"
+  }
+}, 
+{
+  "infoEmpresa": {
+    "cuit": 20737505907,
+    "razon_social": "Reynolds-Nikolaus"
+  },
+  "listaRegistro": [
+    {
+      "denominacion": "Veal - Chops, Split, Frenched",
+      "codigo_ean": 1609016549219,
+      "precio_unidad": 71,
+      "unidad_medida": "L",
+      "cantidad_prod": 7622,
+      "cantidad_vend": 288
+    },
+    {
+      "denominacion": "Pasta - Rotini, Colour, Dry",
+      "codigo_ean": 1496852801344,
+      "precio_unidad": 150,
+      "unidad_medida": "L",
+      "cantidad_prod": 5973,
+      "cantidad_vend": 242
+    },
+    {
+      "denominacion": "Soup - French Can Pea",
+      "codigo_ean": 1537967522815,
+      "precio_unidad": 585,
+      "unidad_medida": "m",
+      "cantidad_prod": 1773,
+      "cantidad_vend": 594
+    }
+  ],
+  "periodo": {
+    "year": "21",
+    "month": "11"
+  }
+}, 
+{
+  "infoEmpresa": {
+    "cuit": 20408527229,
+    "razon_social": "Spinka-Tromp"
+  },
+  "listaRegistro": [
+    {
+      "denominacion": "Cinnamon - Ground",
+      "codigo_ean": 1872780003123,
+      "precio_unidad": 991,
+      "unidad_medida": "m",
+      "cantidad_prod": 3330,
+      "cantidad_vend": 891
+    },
+    {
+      "denominacion": "Napkin White",
+      "codigo_ean": 1816214939984,
+      "precio_unidad": 602,
+      "unidad_medida": "m",
+      "cantidad_prod": 4045,
+      "cantidad_vend": 982
+    },
+    {
+      "denominacion": "Beef - Striploin",
+      "codigo_ean": 1614876871866,
+      "precio_unidad": 281,
+      "unidad_medida": "",
+      "cantidad_prod": 5125,
+      "cantidad_vend": 19
+    },
+    {
+      "denominacion": "Lamb - Shanks",
+      "codigo_ean": 1538273689762,
+      "precio_unidad": 320,
+      "unidad_medida": "L",
+      "cantidad_prod": 3005,
+      "cantidad_vend": 206
+    }
+  ],
+  "periodo": {
+    "year": "21",
+    "month": "02"
+  }
+},
+ {
+  "infoEmpresa": {
+    "cuit": 20544052548,
+    "razon_social": "Hoeger-Davis"
+  },
+  "listaRegistro": [
+    {
+      "denominacion": "Cheese Cheddar Processed",
+      "codigo_ean": 1764095162930,
+      "precio_unidad": 994,
+      "unidad_medida": "",
+      "cantidad_prod": 9592,
+      "cantidad_vend": 742
+    }
+  ],
+  "periodo": {
+    "year": "21",
+    "month": "12"
+  }
+}, 
+{
+  "infoEmpresa": {
+    "cuit": 20673931966,
+    "razon_social": "Kshlerin-Paucek"
+  },
+  "listaRegistro": [
+    {
+      "denominacion": "Cheese - Le Cru Du Clocher",
+      "codigo_ean": 1940887998260,
+      "precio_unidad": 979,
+      "unidad_medida": "m",
+      "cantidad_prod": 7880,
+      "cantidad_vend": 574
+    }
+  ],
+  "periodo": {
+    "year": "21",
+    "month": "05"
+  }
+}]
