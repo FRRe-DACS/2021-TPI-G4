@@ -90,7 +90,6 @@ export default class reportsService {
     const report = await Reports.findById(id_report);
     await instanceProduct.deleteProduct(report?.listaRegistro);
     await Reports.findByIdAndDelete(id_report);
-    //const deletedProductsReports = await Product.deleteMany({ _id: { $in: report?.listaRegistro } })
     return "Reporte eliminado correctamente";
   }
 
