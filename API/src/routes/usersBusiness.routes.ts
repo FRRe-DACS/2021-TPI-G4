@@ -34,10 +34,10 @@ import { errorsValidate, validateSingup, validateLogin } from '../Middlewares/us
  *                      type: integer
  *                      description: Cuit de la empresa
  *                      example: 20304050605
- *                  Razon_social:
+ *                  razon_social:
  *                      type: string
  *                      description: Razon social de la empresa
- *                      example: empresa fantasma 123
+ *                      example: SANCOR SA
  *                  Industria:
  *                      type: string
  *                      description: Sector industrial al cual esta orientado

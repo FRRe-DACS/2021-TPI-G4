@@ -12,7 +12,7 @@ export default class productsService {
  
     return reporte;
   }
-   //Borro lista de productos
+   //Borro lista de productos que se encuentran asociado a un reporte
    async deleteProduct(data_products : any){
     return await Products.deleteMany({ _id: { $in: data_products } })
   }

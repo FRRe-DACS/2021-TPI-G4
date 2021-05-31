@@ -69,7 +69,7 @@ import {
  *                          razon_social:
  *                              type: string
  *                              description: Razon social de la empresa
- *                              example: Osinski-Jast
+ *                              example: SANCOR SA
  *                  listaRegistro:
  *                      type: array
  *                      items:
@@ -105,7 +105,7 @@ import {
  *                          year:
  *                              type: string
  *                              description: Año de carga
- *                              example: 2020
+ *                              example: 20
  *                          month:
  *                              type: string
  *                              description: mes de carga

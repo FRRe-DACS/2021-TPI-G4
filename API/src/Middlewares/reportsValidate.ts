@@ -74,7 +74,6 @@ export const validatePutReports = [
 //Manejo Errores
 export const errorsValidate: RequestHandler = (req, res, next) => {
   const error = validationResult(req);
-  console.log(error);
   if (!error.isEmpty()) {
     res.status(500).json({ errors: error.array() });
   } else {
