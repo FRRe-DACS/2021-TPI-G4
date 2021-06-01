@@ -3,6 +3,7 @@ import reportsClass from "../repository/reports.repository";
 
 //Instancion la clases reportsService
 const instacereports = new reportsClass();
+
 //Obtener Reportes
 export const getreports: RequestHandler = async (req, res) => {
   try {

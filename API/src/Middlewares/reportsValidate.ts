@@ -4,9 +4,15 @@ import { body, validationResult, check } from "express-validator";
 import { RequestHandler } from "express";
 //Import Schema Products
 import Product from "../models/products.models";
+//Import Schema Business
+import Business from "../models/business.models";
+//import Schema Reports
+import Reports from "../models/reports.models";
+
 //Valido reportes en POST
 export const validatePostReports = [
   body("infoEmpresa.cuit").notEmpty().withMessage("¡El CUIT es requerido!"),
+  body("infoEmpresa.cuit").isNumeric().withMessage("¡El CUIT debe ser un numero!"),
   body("infoEmpresa.cuit")
     .isLength({ min: 11, max: 11 })
     .withMessage("¡El CUIT debe tener 11 digitos!"),
@@ -40,6 +46,30 @@ export const validatePostReports = [
         return Promise.reject("¡El codigo EAN ya existe!");
       }
     });
+  }),
+  body("periodo").custom(async (periodo, { req }) => {
+    //Obtengo los IDs de reportes de ese periodo
+    const reportsPeriodo = await Reports.find({ periodo: periodo }, { _id: 1 });
+    //Obtengo los reportes de la empresa que esta enviando los datos
+    const businessPeriodo = await Business.findOne({
+      cuit: req.body.infoEmpresa.cuit,
+    });
+    if (businessPeriodo) {
+      //Verifico si la empresa tiene reportes en ese periodo
+      const newControl = reportsPeriodo.find((reports) => {
+        if (businessPeriodo.report.includes(reports._id)) {
+          return reports._id;
+        }
+      });
+      //Si tiene reportes en el periodo no puede cargarse
+      if (newControl) {
+        throw new Error(
+          "¡Su Empresa ya tiene un reporte en este periodo!")
+        
+      }
+    } else {
+      throw new Error("¡El CUIT no esta registrado!");
+    }
   }),
 ];
 

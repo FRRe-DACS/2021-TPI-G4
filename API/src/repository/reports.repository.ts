@@ -1,5 +1,4 @@
 import Reports from "../models/reports.models";
-import Product from '../models/products.models'
 import Business from "../models/business.models";
 import UserBusiness from "../models/users.business.models";
 import productClass from "./products.repository";
