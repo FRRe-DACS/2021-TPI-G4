@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run dev",
     "build": "tsc",
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts"
   },
