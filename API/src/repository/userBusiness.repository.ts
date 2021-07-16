@@ -11,7 +11,6 @@ import * as Variable from "../config/config";
 export default class userService {
   //Registro
   async userSignup(user: IUserBusiness) {
-    
     const data = await UserBusiness.findOne({ email: user.email });
 
     if (!data) {
@@ -40,20 +39,16 @@ export default class userService {
     //Consulto con la BD
     const dataUserBusiness = await UserBusiness.findOne({ email: user.email });
     //Si no coincide el correo
-    if (!dataUserBusiness){
-        throw new Error(
-            "¡El correo electronico no es valido!"
-          );
-    } 
+    if (!dataUserBusiness) {
+      throw new Error("¡El correo electronico no es valido!");
+    }
     //Si coincide valido password
     const password: boolean = await dataUserBusiness.validatePassword(
       user.password
     );
     //Si no coinciden las contraseñas
     if (!password) {
-        throw new Error(
-            "¡Password Invalida!"
-          );
+      throw new Error("¡Password Invalida!");
     }
     //Si pasa todos los controles puedo ya generar un token
     const token: string = jwt.sign(
@@ -64,5 +59,31 @@ export default class userService {
       }
     );
     return token;
+  }
+  //Obtengo datos del usuario para mostrar en perfil
+  async getUserData(user: IUserBusiness) {
+    const dataUserBusiness = await UserBusiness.findOne(
+      { email: user.email },
+      { password: 0 }
+    );
+    if (dataUserBusiness) {
+      return dataUserBusiness;
+    } else {
+      throw new Error("No hay dato que mostrar!");
+    }
+  }
+  //Actualizo datos del usuario
+  async updateUser(cuitBusiness: any, paramsUdate: any) {
+    const dataUserBusiness = await UserBusiness.findOne({ cuit: cuitBusiness });
+    if (dataUserBusiness) {
+      const updateBusiness = await UserBusiness.findByIdAndUpdate(
+        dataUserBusiness._id,
+        paramsUdate,
+        { new: true }
+      );
+      return updateBusiness;
+    } else {
+      throw new Error("Sus datos no se encuentran!");
+    }
   }
 }

@@ -5,8 +5,8 @@ export interface IProduct extends Document {
     codigo_ean: Number;
     precio_unidad: Number;
     unidad_medida: String;
-    cantidad_prod: Number;
-    cantidad_vend: Number;
+    cantidad_prod: number;
+    cantidad_vend: number;
     report : any
   }
   //Schema PRODUCTS

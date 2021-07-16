@@ -10,8 +10,8 @@ export const getreports: RequestHandler = async (req, res) => {
     //Paso el id que devuelve el token (id de usuario empresa)
     const reports = await instacereports.readreports(req.userId);
     res.status(200).send(reports);
-  } catch (error) {
-    res.status(500).send(error);
+  } catch (error: any) {
+    res.status(500).send(error.message);
   }
 };
 
@@ -22,7 +22,7 @@ export const createreports: RequestHandler = async (req, res) => {
     //Llamo a la instancia de servicios de reportes, paso por parametro el reporte y el id del usuario
     const response = await instacereports.createreports(datareports, req.userId);
     res.status(200).send(response);
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).send(error.message);
   }
 };
@@ -33,7 +33,7 @@ export const deletereports: RequestHandler = async (req, res) => {
     const id_report = req.params._id;
     const response = await instacereports.deletereports(id_report);
     res.status(200).send(response);
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).send(error.message);
   }
 };
@@ -45,7 +45,7 @@ export const updatereports: RequestHandler = async (req, res) => {
     const products = req.body;
     const response = await instacereports.updatereports(id_report, products);
     res.status(200).send(response);
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).send(error.message);
   }
 };

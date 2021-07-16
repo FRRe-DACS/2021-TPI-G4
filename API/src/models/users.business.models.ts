@@ -6,11 +6,11 @@ import bcrypt from 'bcryptjs'
 
 //Interface 
 export interface IUserBusiness extends Document{
-    cuit : number;
+    cuit : Number;
     razon_social : string;
     industria : string;
     email : string; 
-    tel : number;
+    tel : Number;
     ciudad : string;
     password : string;
     encriptarPassword(password : string) : Promise<string>;
@@ -46,7 +46,6 @@ const userBusinessSchema = new Schema<IUserBusiness> ({
     tel : {
         type : Number,
         unique :true,
-        require : true,
         trim : true,
     },
     ciudad : {

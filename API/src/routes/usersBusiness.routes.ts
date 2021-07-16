@@ -1,9 +1,13 @@
 //Import router
-import { Router } from 'express';
-import * as CtrlUserBusiness from '../controller/userBusiness.controller';
+import { Router } from "express";
+import * as CtrlUserBusiness from "../controller/userBusiness.controller";
 //Instancio router
 const router = Router();
-import { errorsValidate, validateSingup, validateLogin } from '../Middlewares/userBusinessValidate';
+import {
+  errorsValidate,
+  validateSingup,
+  validateLogin,
+} from "../Middlewares/userBusinessValidate";
 //Routes
 /**
  * @swagger
@@ -69,7 +73,12 @@ import { errorsValidate, validateSingup, validateLogin } from '../Middlewares/us
 
 //-------------------------------------------------------------------------------------------------------------------------
 //Registrar Usuario
-router.post('/api/signup', validateSingup, errorsValidate, CtrlUserBusiness.userBusinessSignup);
+router.post(
+  "/api/signup",
+  validateSingup,
+  errorsValidate,
+  CtrlUserBusiness.userBusinessSignup
+);
 /**
  * @swagger
  * /api/signup:
@@ -104,7 +113,12 @@ router.post('/api/signup', validateSingup, errorsValidate, CtrlUserBusiness.user
 
 //-------------------------------------------------------------------------------------------------------------------------
 //Iniciar sesion usuario
-router.post('/api/login', validateLogin, errorsValidate, CtrlUserBusiness.userBusinessLogin);
+router.post(
+  "/api/login",
+  validateLogin,
+  errorsValidate,
+  CtrlUserBusiness.userBusinessLogin
+);
 /**
  * @swagger
  * /api/login:
@@ -142,5 +156,8 @@ router.post('/api/login', validateLogin, errorsValidate, CtrlUserBusiness.userBu
  *                                  description: Un mensaje para error en el logeo
  *                                  example: Autenticación fallida!
  */
+
+//Actualizar datos de usuario
+router.put("/api/userbusiness", CtrlUserBusiness.updateUserBusiness);
 
 export default router;

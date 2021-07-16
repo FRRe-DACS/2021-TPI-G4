@@ -4,7 +4,7 @@ import config from "./config";
 //Conecction to DB REPORTS
 async function connections() {
   try {
-    const db = await mongoose.connect(`mongodb://${config.MONGO_USER}:${config.MONGO_PASS}@${config.MONGO_HOST}/${config.MONGO_DB}`, {
+    const db = await mongoose.connect(`${config.MONGO_URI}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,

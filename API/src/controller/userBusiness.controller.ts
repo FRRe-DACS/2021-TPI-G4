@@ -19,7 +19,7 @@ export const userBusinessSignup: RequestHandler = async (req, res) => {
       .header("token", responseServiceBusiness)
       .status(200)
       .json("¡Registro Correcto!");
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json(error.message);
   }
 };
@@ -33,11 +33,27 @@ export const userBusinessLogin: RequestHandler = async (req, res) => {
     const responseServiceBusiness = await instanceUserService.userLogin(
       dataUserBusiness
     );
-    res
-      .header("token", responseServiceBusiness)
-      .status(200)
-      .json("¡Bienvenido!");
-  } catch (error) {
+    const dataResponse = await instanceUserService.getUserData(
+      dataUserBusiness
+    );
+    res.header("token", responseServiceBusiness).status(200).json(dataResponse);
+  } catch (error: any) {
+    res.status(500).json(error.message);
+  }
+};
+
+//Controlador actualizar usuario
+export const updateUserBusiness: RequestHandler = async (req, res) => {
+  try {
+    //Busco la empresa en la coleccion de usuarios empresas por cuit que viene por parametro
+    const dataBusinees = req.query.cuit;
+    const paramsUpdate = req.body;
+    const responseData = await instanceUserService.updateUser(
+      dataBusinees,
+      paramsUpdate
+    );
+    res.status(200).json(responseData);
+  } catch (error: any) {
     res.status(500).json(error.message);
   }
 };

@@ -11,7 +11,9 @@ export const getMorgan = morgan("dev");
 export const json = express.json(); // Is a built express middleware that convert request body to JSON.
 
 //Cors
-export const serverConnection = cors();
+export const serverConnection = cors({
+  exposedHeaders: "token",
+});
 
 //URLencoded
 export const url = express.urlencoded({ extended: false }); //converting form-data to JSON

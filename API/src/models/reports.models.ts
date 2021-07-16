@@ -6,6 +6,7 @@ export interface IReport extends Document {
   periodo: any;
 }
 
+
 //Schema Reports
 //trim clean white
 const reporteSchema = new Schema<IReport>({
@@ -30,6 +31,7 @@ const reporteSchema = new Schema<IReport>({
       default : 10
   },
   periodo: {
+    
     year: {
       type: String,
       require: true,
