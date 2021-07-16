@@ -1,4 +1,4 @@
-com.example.frontend_tpi_v2
+com.example.sipre
 attr alpha
 attr coordinatorLayoutStyle
 attr font
